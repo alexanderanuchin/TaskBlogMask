@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Маски вместо слов</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="video-container">
+    <!-- Видео -->
+    <video autoplay loop muted>
+      <source src="video.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+
+    <!-- SVG-маска с текстом -->
+    <svg class="text-overlay" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <mask id="mask-text">
+            <rect width="100%" height="100%" fill="white" />
+            <!-- Вырезаем окна вместо слов -->
+            <rect x="700" y="50" width="400" height="80" fill="black" />
+            <rect x="570" y="150" width="100" height="80" fill="black" />
+            <rect x="710" y="250" width="330" height="80" fill="black" />
+            <rect x="750" y="350" width="680" height="80" fill="black" />
+          </mask>
+        </defs>
+        <rect width="100%" height="100%" fill="black" mask="url(#mask-text)" />
+        <!-- Текст -->
+        <text x="300" y="110" font-size="80" fill="white">
+          we're here <tspan x="1135" y="110" fill="white"> to make</tspan>
+        </text>
+        <text x="300" y="210" font-size="80" fill="white">
+          Nihilet <tspan x="700" y="210">numquam, voluptate</tspan>
+        </text>
+        <text x="300" y="310" font-size="80" fill="white">
+          so you can<tspan x="1060" y="310">live longer</tspan>
+        </text>
+        <text x="300" y="410" font-size="80" fill="white">
+          and happier
+        </text>
+      </svg>
+      
+  </div>
+</body>
+</html>
